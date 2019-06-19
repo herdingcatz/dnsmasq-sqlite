@@ -23,7 +23,7 @@ void db_init(void)
   
   if (sqlite3_prepare(
     db,
-    "select count(*) from domain where Domain=?",
+    "select count(*) from domain where Domain=REPLACE(?,'www','')",
     -1,
     &db_domain_exists,
     NULL
